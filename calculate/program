@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<conio.h>
+void add();
+void sub();
+void mult();
+void div();
+void rem();
+int a,b;
+
+void main()
+{ 
+printf("Enter two number \n");
+scanf("%d %d",&a,&b);
+add();
+sub();
+mult();
+div();
+rem();
+getch();
+}
+void add()
+{
+	int sum;
+	sum = a+b;
+	printf("The sum of %d and %d is     %d  \n",a,b,sum);
+}
+void sub()
+{
+	int sub;
+	sub = a-b;
+	printf("The sub of %d and %d is     %d \n",a,b,sub);
+}
+void mult()
+{
+	int mult;
+	mult = a*b;
+	printf("The mult of %d and %d is     %d \n",a,b,mult);
+}
+void div()
+{
+	int div;
+	div = b/a;
+	printf("The div of %d and %d is     %d \n",a,b,div);
+}
+void rem()
+{
+	int rem;
+	rem = b%a;
+	printf("The rem of %d and %d is     %d",a,b,rem);
+}
