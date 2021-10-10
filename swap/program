@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+int swap(int *a,int *b);
+int a=5;
+int b=6;
+int main()
+{
+	
+	printf("The value are a=%d and b=%d \n",a,b);
+    swap (&a,&b);
+	printf("The value after calling the function is a=%d and b=%d",a,b);
+	getch();
+	return 0; 
+}
+
+ int swap(int *p,int *q)
+{
+	
+	int temp;
+	temp=*p;
+	*p=*q;
+	*q=temp;
+	printf("The value after swapping is a=%d and b=%d",*p,*q);
+	getch();
+	return(*p,*q);
+}
