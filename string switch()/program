@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<string.h>
+char str[50];
+char str1[50];
+char str2[50];
+char str3[100];
+
+int main()
+{
+	int c;
+	printf("********* The Menu ***********\n");
+	printf("1.adddress of each character in a string \n");
+	printf("2.concatenation of two string without strcat function \n");
+	printf("Enter your choice\n");
+	scanf("%d",&c);
+	getchar();
+	switch (c) 
+	{
+		
+		case 1:
+			printf("Enter a string \n");
+	        gets(str);
+	        for(int i=0;i<strlen(str);i++) {
+	        printf("address of %c is %u \n",str[i],&str[i]);
+			}
+			break;
+			
+		case 2:
+			int a,b;
+	printf("Enter the first string \n");
+	gets(str1);
+	printf("Enter the second string \n");
+	gets(str2);
+	 a=strlen(str1);
+	 b=strlen(str2);
+	
+	for(int i=0;i<a;i++) {
+		str3[i]=str1[i];
+}
+
+for(int i=0;i<(a+b);i++) {
+	str3[a+i]=str2[i];
+}
+
+printf("concatenation of two string \n");
+
+for(int i=0;i<(a+b);i++)
+{
+	printf("%c",str3[i]);
+}
+break;
+
+case 3:
+		printf("Wrong input");
+		break;
+			
+	default:
+		printf("Wrong input");
+		break;
+}
+return 0;
+}
+
