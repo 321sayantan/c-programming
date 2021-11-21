@@ -1,0 +1,28 @@
+
+// display of maximum and minimum number from a series of numbers
+# include<stdio.h>
+main()
+{
+	int i,n;
+	float no[100],max,min;
+	printf("How many numbers are considered \n");
+	scanf("%d",&n);
+	printf("\n");
+	for(i=0;i<n;i++)
+	{
+		printf("The no[%d] is ",i+1);
+		scanf("%f",&no[i]);
+	}
+	max=no[0];
+	min=no[0];
+	for(i=1;i<n;i++)
+	{
+		if(max<no[i])
+		max=no[i];
+		if(min>no[i])
+		min=no[i];
+	}
+	printf("\n");
+	printf("The maximum number is %f \n",max);
+	printf("The minimum number is %f \n", min);
+}
