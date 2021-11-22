@@ -1,0 +1,50 @@
+//"Delete all occurrences of "the" from a sentence "/
+
+#include <stdio.h> 
+#include <conio.h>
+
+void main()
+{
+char str[80], str2[80];
+char *s, *q, *p;
+int i; 
+clrscr();
+printf ("\nEnter a sentence:\n");
+gets (str);
+s=str; //*Base address of the string '/
+p=str2; //*Base address of new string */
+while (*s)
+{
+q=s;
+if (*s == 'T' || *s == 't')
+{
+  s++;
+ if (*s == 'h') 
+{
+s++;
+if (*s == 'e')
+s++;
+else
+{
+for (i = 0; i <= 2; i++)
+  *p++=*q++;
+}
+}
+else
+{
+*p++=*q++;
+s--;
+}
+}
+else
+*p++ = *s; 
+s++;
+}
+ *p ='\0';
+printf ("\n\nSentence after deleting all occurences of 'the' is:\n"); 
+puts (str2);
+
+printf("\n\n\n\n\nPress any key to exit...");
+ getch();
+
+}
