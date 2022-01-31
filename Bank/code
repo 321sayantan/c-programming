@@ -1,0 +1,112 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<stdlib.h>
+void add_accinfo();
+void display_info();
+void withdip();
+struct customer
+{
+	long int acc_no;
+	char name[20];
+	float bal; 
+}bank[10];
+int count=0;
+int main()
+{
+	int i;
+	while(1)
+	{
+		printf("1.Add customer info\n");
+		printf("2. Display the customer detail\n");
+		printf("3. Want to diposit or withdraw\n");
+		printf("4. exit\n");
+		int ch;
+		printf("Enter your choice\n");
+		scanf("%d",&ch);
+		switch(ch)
+		{
+			case 1:
+				add_accinfo();
+				break;
+				
+			case 2:
+				display_info();
+				break;
+			
+			case 3:		
+				withdip();
+				break;
+				
+			case 4:
+			    exit(0);
+			    break;
+			
+			default:
+			printf("Wrong choice");
+		}
+	}
+			return 0;	
+		}
+		
+	void add_accinfo()
+	{
+		printf("Enter the account number\n");
+		scanf("%ld",&bank[count].acc_no);
+		printf("Enter the name of the customer\n");
+		scanf("%s",bank[count].name);
+		printf("Enter the balance\n");
+		scanf("%f",&bank[count].bal);
+		count++;
+	}
+	void display_info()
+	{
+		for(int i=0;i<count;i++)
+		{
+			printf("account no: %ld \t\t customer name: %s \t\t Balance: %f \n", bank[i].acc_no, bank[i].name, bank[i].bal); 
+		   }
+	   }
+	   
+	   void withdip()
+	   {
+	   	long int acno;
+	   	float amt;
+	   	int code;
+	   	printf("Enter the account number");
+		scanf("%ld",&acno);
+		printf("Enter the amount");
+		scanf("%f",&amt);
+		printf("Enter 1 for deposit and 0 for withdraw");
+		scanf("%d",&code);
+		for(int i=0;i<count;i++)
+		{
+			if(bank[i].acc_no== acno)
+			{
+				if(code==1)
+				{
+					bank[i].bal+=amt;
+					printf("Your current balance is: %0.2f \n\n\n",bank[i].bal);
+				}
+				else if(code==0)
+				{
+					if(bank[i].bal>amt)
+					{
+					bank[i].bal-=amt;
+					printf("Your current balance is: %0.2f \n\n\n",bank[i].bal);
+				      }
+				else
+				{
+					printf("insufficient balance\n\n");
+				      }
+				}
+				else
+				{
+				printf("Wrong code\n\n");	
+				}
+			}
+			else
+			{
+				printf("Wrong account number\n\n");
+			}
+	   }
+}
